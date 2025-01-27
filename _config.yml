@@ -1,8 +1,8 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
-theme: just-the-docs
+title: FablessBio
+description: It is a SynBio startup affiliated with Computational & Synthetic Biology Laboratory at Korea University!
 
-url: https://just-the-docs.github.io
+url: https://fabless.bio
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  CSBL: https://choilab.github.io
+  Korea University: https://www.korea.ac.kr
