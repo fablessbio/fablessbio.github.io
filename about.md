@@ -4,7 +4,9 @@ layout: about
 ---
 
 FablessBio Inc. is a Synthetic Biology Startup. We aim to provide an intelligent platform for design, model, build, test and learn biosystems and techonolgy for customers. FablessBio's genomic LLM (large languate model) provides new discovery for foods, medicines, materials. 
+
 The pipelines and designs are...
+
 Coming soon
 {: .label .label-yellow }
 
