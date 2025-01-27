@@ -1,8 +1,2 @@
-title: FablessBio
-description: It is a SynBio startup affiliated with Computational & Synthetic Biology Laboratory at Korea University!
-
-url: https://fabless.bio
-
-aux_links:
-  CSBL: https://choilab.github.io
-  Korea University: https://www.korea.ac.kr
+remote_theme: just-the-docs/just-the-docs
+#theme: jekyll-theme-tactile
