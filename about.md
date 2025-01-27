@@ -4,7 +4,7 @@ layout: about
 ---
 
 This is Fabless Bio Inc.
+Coming soon
+{: .label .label-yellow }
 
-[CSBL](https://choilab.github.io)
-
-[Korea University](https://www.korea.ac.kr)
+FablessBio is affiliated with [CSBL](https://choilab.github.io) at [Korea University](https://www.korea.ac.kr)
