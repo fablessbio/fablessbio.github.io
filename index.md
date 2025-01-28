@@ -7,10 +7,10 @@ layout: home
 {: .label .label-green }
 
 We shape an intelligent biomanufacturing platform to design, model, build, test and learn (DMBTL) biosystems and techonolgies for any purpose.
-{: .label .label-orange }
+{: .label .label-blue }
 
 **fab*less*Bio**-AI develops genomic/proteomic LLM (large languate model) to provides new discovery for agriculture, foods, medicines, and materials.
-{: .label .label-magenta }
+{: .label .label-purple }
 
 
 The pipelines and designs are...
