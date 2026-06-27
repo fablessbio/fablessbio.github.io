@@ -5,6 +5,27 @@
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---- Theme toggle (light default, dark opt-in, persisted) ---- */
+  var themeBtn = document.querySelector(".theme-toggle");
+  if (themeBtn) {
+    var setLabel = function () {
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      themeBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
+      themeBtn.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+    };
+    setLabel();
+    themeBtn.addEventListener("click", function () {
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+      try { localStorage.setItem("fb-theme", isDark ? "light" : "dark"); } catch (e) {}
+      setLabel();
+    });
+  }
+
   /* ---- Mobile nav toggle ---- */
   var toggle = document.querySelector(".nav-toggle");
   var links = document.querySelector(".nav-links");
