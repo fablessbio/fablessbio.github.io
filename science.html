@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Science — fablessBio</title>
+  <meta name="description" content="DNA and protein foundation models, genomic language models, and the DMBTL platform behind fablessBio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="fablessBio home">
+        fab<span class="em">less</span>Bio<span class="tld">// CSBL · KU</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="science.html" aria-current="page">Science</a>
+        <a href="about.html">About</a>
+        <a href="customers.html">Customers</a>
+        <a href="history.html">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow reveal">Science</p>
+        <h1 class="reveal" style="max-width:18ch;">Reading, writing, and editing the code of life.</h1>
+        <p class="hero-sub reveal">
+          Biological sequence behaves like natural language: a finite alphabet, recurring words,
+          deep grammar. fablessBio trains foundation models on that language to predict, design,
+          and engineer biology &mdash; from single genes to whole organisms, seen in the light of
+          evolution.
+        </p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="seq" aria-hidden="true">
+        <span class="end">5'&mdash;</span>
+        <span class="bases"></span>
+        <span class="end">&mdash;3'</span>
+      </div>
+    </div>
+
+    <!-- MODELS -->
+    <section class="section">
+      <div class="wrap">
+
+        <div class="frow reveal">
+          <div class="meta">
+            <span class="tag">DNA / RNA</span>
+            <h3>Genome foundation model</h3>
+          </div>
+          <div class="body">
+            <p>
+              Deciphering the code of life begins with sequencing, gene prediction, and functional
+              annotation. We treat genomes and transcriptomes as text and train large sequence
+              models that learn this grammar directly from data &mdash; across organisms ranging
+              from bacteria to fungi to insects.
+            </p>
+            <p>
+              The approach is grounded in genome-scale programs: members of our group have
+              contributed to the 1000 Fungal Genomes Project with the Joint Genome Institute and
+              continue to consolidate the fungal genome universe. That depth of annotated sequence
+              is the training ground for models that find genes, regulatory elements, and novel
+              short open reading frames others miss.
+            </p>
+            <ul>
+              <li>Gene prediction and functional annotation at genome scale</li>
+              <li>Novel coding and regulatory element discovery</li>
+              <li>Microbiome, metagenome, and pan-genome representation learning</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="frow reveal">
+          <div class="meta">
+            <span class="tag">Protein</span>
+            <h3>Protein foundation model</h3>
+          </div>
+          <div class="body">
+            <p>
+              All matter is built from a finite set of elements; likewise, the innumerable proteins
+              of the protein universe belong to a finite set of folds, decomposable into recurring
+              folding units. We learn these building blocks and how they recombine, then use them
+              to design and engineer biomolecules toward a target function.
+            </p>
+            <p>
+              Structure determines function. By pairing learned sequence representations with
+              structural priors, our models move from describing the protein space to proposing new
+              points within it &mdash; novel enzymes and binders that nature has not yet sampled.
+            </p>
+            <ul>
+              <li>Structure-aware representation of sequence and fold</li>
+              <li>Enzyme and biomolecule design from evolutionary principles</li>
+              <li>Mapping where proteins are born, innovate, and evolve</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="frow reveal">
+          <div class="meta">
+            <span class="tag">Genomic LLM</span>
+            <h3>Biosequence language model</h3>
+          </div>
+          <div class="body">
+            <p>
+              Language models such as GPT and BERT transformed natural language processing. Because
+              biostrings share the structure of natural language, the same architectures transfer
+              to biological sequence. We build a unified genomic LLM that reasons over DNA, RNA, and
+              protein within one representation.
+            </p>
+            <p>
+              A shared model lets signals cross modalities &mdash; a genomic context informing a
+              protein prediction, and the reverse &mdash; which is where much of the useful biology
+              lives.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DMBTL -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="idx">DMBTL</span>
+          <h2>Models that improve every cycle.</h2>
+        </div>
+        <p class="lede reveal">
+          Our platform runs a Design&ndash;Model&ndash;Build&ndash;Test&ndash;Learn loop. Following
+          Feynman &mdash; <em>what I cannot create, I do not understand</em> &mdash; we learn how
+          nature builds by building, and feed every measured result back into the models.
+        </p>
+        <div class="grid grid--3 stagger" style="margin-top:2.2rem;">
+          <article class="cell"><span class="tag">01 · Design</span><h3>Propose</h3><p>Models generate candidate sequences, structures, and pathways.</p></article>
+          <article class="cell"><span class="tag">02 · Build &amp; Test</span><h3>Validate</h3><p>Candidates are synthesized and assayed through partner facilities.</p></article>
+          <article class="cell"><span class="tag">03 · Learn</span><h3>Update</h3><p>Outcomes retrain the models, raising accuracy each iteration.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NATIONAL GPU PROGRAM -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="idx">05</span>
+          <h2>Compute for foundation models.</h2>
+        </div>
+        <div class="callout reveal">
+          <span class="badge">MSIT · National GPU Program</span>
+          <div>
+            <h3>Training at national scale</h3>
+            <p>
+              fablessBio is a participant in the National GPU Support Program operated by the
+              Ministry of Science and ICT (MSIT) of the Republic of Korea. The program provides
+              the large-scale GPU compute required to train and evaluate our genomic and protein
+              foundation models, supporting research that would otherwise be out of reach for a
+              team of our size.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="index.html">fab<span class="em">less</span>Bio</a>
+          <p class="foot-blurb">A fabless company for biology. We lead the renaissance of synthetic biology in the bioeconomy through genomic and protein foundation models.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Site</h4>
+          <a href="science.html">Science</a>
+          <a href="about.html">About</a>
+          <a href="customers.html">Customers</a>
+          <a href="history.html">History</a>
+        </div>
+        <div class="foot-col">
+          <h4>Affiliation</h4>
+          <a href="https://choilab.github.io" target="_blank" rel="noopener">CSBL</a>
+          <a href="https://www.korea.ac.kr" target="_blank" rel="noopener">Korea University</a>
+          <p>L211 West Bldg., College of Life Sciences &amp; Biotechnology, Seoul 02841, Korea</p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>&copy; 2020&ndash;<span data-year>2026</span> fab.lessBio Inc.</p>
+        <p>Since 2020 &middot; affiliated with CSBL at Korea University</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
