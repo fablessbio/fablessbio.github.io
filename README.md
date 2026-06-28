@@ -60,6 +60,12 @@ GitHub Pages site; no change is needed unless you move the `CNAME` file.
 ## Notes
 
 - Fonts (Space Grotesk, Inter, IBM Plex Mono) load from Google Fonts.
+- The "less" in every "fabless"/"fablessBio" is wrapped in `<span class="less">`,
+  styled italic with a lime-to-orange gradient. Adjust the two colors via the
+  `--lime` and `--orange` custom properties in `assets/css/style.css`.
+- The hero genome stream and the per-section molecular accents (helix, ribbon,
+  contact network) are decorative SVG/JS. Stream speed and density are tunable
+  in `assets/js/main.js` (`setInterval(tick, 82)` and the highlight probability).
 - The history timeline dates are program-level milestones; review and adjust
   them to match the company's records before publishing.
 - No emojis are used anywhere in the codebase, per project convention.

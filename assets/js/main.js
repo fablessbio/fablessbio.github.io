@@ -58,30 +58,71 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---- Sequence readout (signature) ---- */
-  var seq = document.querySelector(".seq .bases");
-  if (seq) {
-    var alphabet = "ACGT";
-    var run = function (len) {
-      var s = "";
-      for (var i = 0; i < len; i++) {
-        if (i > 0 && i % 3 === 0) s += " ";
-        s += alphabet[(Math.random() * 4) | 0];
-      }
-      return s;
-    };
-    var render = function () {
-      // Static, readable strand with a couple of highlighted codons.
-      var pre = run(18), hi = run(3), post = run(18);
-      seq.innerHTML =
-        '<b>' + pre + '</b> <span class="hi">' + hi + '</span> <b>' + post +
-        '</b><span class="caret">_</span>';
-    };
-    render();
-    if (!reduced) {
-      setInterval(render, 2600);
+  /* ---- Genome stream (signature, multi-line) ---- */
+  var BASES = "ACGT";
+  var randBase = function () { return BASES[(Math.random() * 4) | 0]; };
+  var panels = document.querySelectorAll(".genome-body");
+
+  panels.forEach(function (panel) {
+    var rowCount = parseInt(panel.getAttribute("data-rows"), 10) || 8;
+    var cols = parseInt(panel.getAttribute("data-cols"), 10) || 64;
+    var rows = [];
+
+    for (var r = 0; r < rowCount; r++) {
+      var cells = [];
+      for (var c = 0; c < cols; c++) cells.push({ ch: randBase(), hi: false });
+      var rowEl = document.createElement("div");
+      rowEl.className = "genome-row";
+      var posEl = document.createElement("span");
+      posEl.className = "pos";
+      var strandEl = document.createElement("span");
+      strandEl.className = "strand";
+      rowEl.appendChild(posEl);
+      rowEl.appendChild(strandEl);
+      panel.appendChild(rowEl);
+      rows.push({
+        cells: cells, hiLeft: 0,
+        pos: 1 + ((Math.random() * 90000) | 0),
+        strandEl: strandEl, posEl: posEl
+      });
     }
-  }
+
+    var fmt = function (n) { return n.toLocaleString("en-US"); };
+
+    var renderRow = function (row) {
+      var cells = row.cells, n = cells.length, out = "", buf = "", cls = null;
+      var flush = function () {
+        if (buf) { out += cls ? '<span class="' + cls + '">' + buf + "</span>" : buf; buf = ""; }
+      };
+      for (var i = 0; i < n; i++) {
+        var thisCls = (i === n - 1) ? "head" : (cells[i].hi ? "hi" : null);
+        if (thisCls !== cls) { flush(); cls = thisCls; }
+        buf += cells[i].ch;
+        if (i % 3 === 2 && i !== n - 1) buf += " ";
+      }
+      flush();
+      row.strandEl.innerHTML = out;
+      row.posEl.textContent = fmt(row.pos);
+    };
+
+    rows.forEach(renderRow);
+    if (reduced) return;
+
+    var tick = function () {
+      for (var k = 0; k < rows.length; k++) {
+        var row = rows[k];
+        if (Math.random() < 0.12) continue; // desync rows slightly
+        row.cells.shift();
+        var hi = false;
+        if (row.hiLeft > 0) { hi = true; row.hiLeft--; }
+        else if (Math.random() < 0.02) { row.hiLeft = 2; hi = true; } // start a called codon
+        row.cells.push({ ch: randBase(), hi: hi });
+        row.pos++;
+        renderRow(row);
+      }
+    };
+    setInterval(tick, 82);
+  });
 
   /* ---- Current year ---- */
   var y = document.querySelector("[data-year]");
